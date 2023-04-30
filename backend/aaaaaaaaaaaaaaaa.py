@@ -20,12 +20,5 @@ def index():
     else:
         return render_template('calculatorr.html')
 
-#@app.route('/calculator', methods=['POST'])
-#def calculator():
- #   num1 = request.json['num1']
-  #  num2 = request.json['num2']
-   # result = num1 + num2
-    #return jsonify({'result': result})
-
 if __name__ == '__main__':
     app.run(debug=True)
