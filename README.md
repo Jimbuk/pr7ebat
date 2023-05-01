@@ -4,6 +4,6 @@
 ```sudo docker build -t proxy-nginx ./proxy```
 
 ### 1 conteiner
-```docker run -p 5000:5000 --network host -it fluck-ubuntu```
+```docker run --name backend -p 5000:5000 --network host -it fluck-ubuntu```
 ### 2 conteiner
-```docker run -p 5000:5000 -p 80:80 --network host -it proxy-nginx```
+```docker run --name proxy -p 5000:5000 -p 80:80 --network host -it proxy-nginx```
