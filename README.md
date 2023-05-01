@@ -1,5 +1,5 @@
 ### build image 1
-```sudo docker build -t fluck-ubunut ./backend```
+```sudo docker build -t fluck-ubuntu ./backend```
 ### build image 2
 ```sudo docker build -t proxy-nginx ./proxy```
 
