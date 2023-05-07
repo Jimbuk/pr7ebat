@@ -10,7 +10,7 @@ ONBUILD RUN mv /pr7ebat/proxy/nginx.conf /etc/nginx/nginx.conf && echo "Сбор
 
 ONBUILD CMD ["nginx","-g","daemon off;"]
 
-RUN wget -i./img.png https://www.mirea.ru/upload/medialibrary/80f/MIREA_Gerb_Colour.png
+RUN wget -i ./pr7ebat/img.png https://www.mirea.ru/upload/medialibrary/80f/MIREA_Gerb_Colour.png
 
 WORKDIR /pr7ebat/
 
