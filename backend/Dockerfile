@@ -10,11 +10,11 @@ ONBUILD RUN mv /pr7ebat/proxy/nginx.conf /etc/nginx/nginx.conf && echo "Сбор
 
 ONBUILD CMD ["nginx","-g","daemon off;"]
 
+RUN wget -i./img.png https://www.mirea.ru/upload/medialibrary/80f/MIREA_Gerb_Colour.png
+
 WORKDIR /pr7ebat/
 
 RUN pip install --no-cache-dir -r ./backend/requirements.txt
-
-RUN wget -i./img.png https://www.mirea.ru/upload/medialibrary/80f/MIREA_Gerb_Colour.png
 
 COPY app.py /app.py
 
