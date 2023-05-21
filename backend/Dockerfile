@@ -4,6 +4,8 @@ LABEL description="Boyko Dmitry Vyacheslavovich INBO-11-20"
 
 RUN apt-get update && apt-get install -y python3 python3-pip && apt-get install git -y && apt install nginx -y && apt-get install -y wget
 
+RUN apt-get install -y postgresql-client
+
 RUN git clone https://github.com/Jimbuk/pr7ebat.git
 
 ONBUILD RUN mv /pr7ebat/proxy/nginx.conf /etc/nginx/nginx.conf && echo "Сборка и заруск произведены. Автор Бойко Д.В."

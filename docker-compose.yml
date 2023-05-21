@@ -1,0 +1,41 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_HOST=127.0.0.1
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgresql
+      - POSTGRES_DB=dbcalculate
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./pr7ebat:/pr7ebat
+
+  db:
+    image: postgres:latest
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgresql
+      - POSTGRES_DB=dbcalculate
+  nginx:
+    image: nginx
+    volumes:
+      - ./proxy/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+
+volumes:
+  db-data:
+
+networks:
+  app-network:
