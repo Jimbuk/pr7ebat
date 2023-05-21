@@ -24,4 +24,4 @@ ADD app.py /app.py
 
 EXPOSE 5000
 
-CMD ["python3", "./backend/aaaaaaaaaaaaaaaa.py"]
+CMD ["python3", "/backend/aaaaaaaaaaaaaaaa.py"]
